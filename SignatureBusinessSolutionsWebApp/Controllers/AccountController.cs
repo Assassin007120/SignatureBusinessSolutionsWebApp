@@ -68,6 +68,8 @@ namespace SignatureBusinessSolutionsWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            model.LastLogin = DateTime.Now;
+
             if (!ModelState.IsValid)
             {
                 return View(model);
