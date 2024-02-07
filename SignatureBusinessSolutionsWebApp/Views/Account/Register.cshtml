@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AccountsLayout.cshtml";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
 {
     @Html.AntiForgeryToken()
     <div class="login-box">
@@ -51,6 +51,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="input-group mb-3">
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Confirm Password" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-4">
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
@@ -71,8 +80,8 @@
                     </a>
                 </div>
                 @*<p class="mb-0">
-                        <a href="register.html" class="text-center">Register</a>
-                    </p>*@
+            <a href="register.html" class="text-center">Register</a>
+        </p>*@
             </div>
         </div>
     </div>

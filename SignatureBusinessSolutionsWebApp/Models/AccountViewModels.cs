@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SignatureBusinessSolutionsWebApp.Models
@@ -60,10 +61,19 @@ namespace SignatureBusinessSolutionsWebApp.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        [Display(Name = "Last Login")]
+        public DateTime LastLogin { get; set; }
     }
 
     public class RegisterViewModel
     {
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string Surname { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
