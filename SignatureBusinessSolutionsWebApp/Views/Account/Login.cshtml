@@ -39,17 +39,17 @@
                         <button type="submit" class="btn btn-primary btn-block">Log In</button>
                     </div>
                     <div class="col-4">
-                        <a href="@Url.Action("Register", "Accounts")" title="Register" class="btn btn-success btn-block">
+                        <a href="@Url.Action("Register", "Account")" title="Register" class="btn btn-success btn-block">
                             Register
                         </a>
                     </div>
                 </div>
                 <div class="social-auth-links text-center mb-3">
                     <p>- OR -</p>
-                    <a href="#" class="btn btn-block btn-primary">
+                    <a href="#" class="btn btn-block btn-primary socialBtn">
                         <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
                     </a>
-                    <a href="#" class="btn btn-block btn-danger">
+                    <a href="#" class="btn btn-block btn-danger socialBtn">
                         <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
                     </a>
                 </div>
@@ -59,4 +59,20 @@
             </div>
         </div>
     </div>
+}
+
+@section Scripts {
+    <script>
+        $(".socialBtn").on("click", function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Unavailable!',
+                icon: 'info',
+                text: 'This Feature will roll out in the next release, stay tuned!',
+                confirmButtonColor: '#0D6EFD',
+                confirmButtonText: 'OK!'
+            })
+        })
+    </script>
 }

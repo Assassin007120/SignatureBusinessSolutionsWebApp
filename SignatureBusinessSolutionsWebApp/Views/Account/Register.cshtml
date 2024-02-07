@@ -65,25 +65,37 @@
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
                     </div>
                     <div class="col-4">
-                        <a href="@Url.Action("Login", "Accounts")" title="Login" class="btn btn-success btn-block">
+                        <a href="@Url.Action("Login", "Account")" title="Login" class="btn btn-success btn-block">
                             Log In
                         </a>
                     </div>
                 </div>
                 <div class="social-auth-links text-center mb-3">
                     <p>- OR -</p>
-                    <a href="#" class="btn btn-block btn-primary">
-                        <i class="fab fa-facebook mr-2"></i> register using Facebook
+                    <a href="#" class="btn btn-block btn-primary socialBtn">
+                        <i class="fab fa-facebook mr-2"></i> Register using Facebook
                     </a>
-                    <a href="#" class="btn btn-block btn-danger">
+                    <a href="#" class="btn btn-block btn-danger socialBtn">
                         <i class="fab fa-google-plus mr-2"></i> Register using Google+
                     </a>
                 </div>
-                @*<p class="mb-0">
-            <a href="register.html" class="text-center">Register</a>
-        </p>*@
             </div>
         </div>
     </div>
 }
 
+@section Scripts {
+    <script>
+        $(".socialBtn").on("click", function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Unavailable!',
+                icon: 'info',
+                text: 'This Feature will roll out in the next release, stay tuned!',
+                confirmButtonColor: '#0D6EFD',
+                confirmButtonText: 'OK!'
+            })
+        })
+    </script>
+    }
