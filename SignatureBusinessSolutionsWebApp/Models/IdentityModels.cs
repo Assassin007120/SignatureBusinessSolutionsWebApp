@@ -25,6 +25,8 @@ namespace SignatureBusinessSolutionsWebApp.Models
         {
         }
 
+        public virtual DbSet<InformationModel> Informations { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
