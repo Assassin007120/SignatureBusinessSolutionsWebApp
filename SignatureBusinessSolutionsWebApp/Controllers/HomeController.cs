@@ -34,13 +34,13 @@ namespace SignatureBusinessSolutionsWebApp.Controllers
             {
                 var userLoggedIn = User.Identity.Name;
 
-                if (model == null)
+                if (model.CellNo == null || model.AddressLine1 == null || model.PostalAddress1 == null || model.PostalCode == 0)
                 {
                     var errorUserInfo = new UserInformationDTO()
                     {
                         StatusCode = 400,
                         StatusTitle = "Error",
-                        StatusMessage = "Fields are invalid. Please contact your administrator."
+                        StatusMessage = "Fields are empty (Cell No., Address 1, Postal Address 1, Postal Code). Try again."
                     };
 
                     return Json(errorUserInfo, JsonRequestBehavior.DenyGet);
